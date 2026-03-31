@@ -86,3 +86,5 @@ router.post('/ask', async (req, res) => {
 });
 
 module.exports = router;
+
+// API insights handler configured
