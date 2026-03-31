@@ -90,3 +90,5 @@ module.exports = router;
 // API insights handler configured
 
 // API insights handler configured
+
+// Insights route setup complete
