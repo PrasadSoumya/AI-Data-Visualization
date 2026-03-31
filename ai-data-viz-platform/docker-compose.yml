@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
   client:
@@ -8,7 +7,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:5000/api
+      # In Docker, the client runs on the host browser, so it accesses the API on localhost:5005
+      - NEXT_PUBLIC_API_URL=http://localhost:5005/api
     depends_on:
       - server
     networks:
@@ -19,12 +19,13 @@ services:
       context: ./server
       dockerfile: Dockerfile
     ports:
-      - "5000:5000"
+      - "5005:5005"
     environment:
-      - PORT=5000
+      - PORT=5005
+      # Docker uses the service name "mongo" instead of localhost for container-to-container traffic
       - MONGO_URI=mongodb://mongo:27017/ai-data-viz
-      - JWT_SECRET=supersecretjwt
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - JWT_SECRET=supersecretjwt_12345
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
     depends_on:
       - mongo
     networks:
