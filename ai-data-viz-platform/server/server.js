@@ -34,3 +34,5 @@ mongoose.connect(MONGO_URI)
   .catch((err) => {
     console.error('Failed to connect to MongoDB', err);
   });
+
+// Main entry point for application running
