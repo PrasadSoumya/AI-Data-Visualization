@@ -92,3 +92,5 @@ module.exports = router;
 // API insights handler configured
 
 // Insights route setup complete
+
+// Process AI payload
