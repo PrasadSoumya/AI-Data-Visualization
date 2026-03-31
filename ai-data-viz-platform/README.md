@@ -60,3 +60,5 @@ This platform allows users to upload datasets (CSV/Excel), automatically visuali
 - [ ] Backend: AI Integration (OpenAI API)
 - [ ] Frontend: Dashboard UI with Sidebar
 - [ ] Frontend: Visualization integration (Recharts)
+
+
